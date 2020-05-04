@@ -21,5 +21,6 @@ public class EnemyController : MonoBehaviour
         Vector3 moveDir = (playerObject.transform.position - transform.position).normalized;
         Vector3 noY = new Vector3(moveDir.x, 0, moveDir.z);
         enemyRB.AddForce(noY * speed);
+        if (transform.position.y < -10) Destroy(gameObject);
     }
 }
